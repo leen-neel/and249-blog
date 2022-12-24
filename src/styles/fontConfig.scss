@@ -1,0 +1,24 @@
+// Custom font face - Architects Daughter
+@font-face {
+    font-family: archDau;
+    src: url(./fonts/ArchDau.ttf);
+}
+
+.archDau {
+    font-family: 'archDau';
+}
+
+// Custom font face - Oswald
+@font-face {
+    font-family: oswald;
+    src: url(./fonts/Oswald.ttf);
+}
+
+.oswald {
+    font-family: 'oswald';
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(./fonts/Poppins.ttf);
+}
