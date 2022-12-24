@@ -1,0 +1,32 @@
+<header class="header archDau">
+    <h1>
+        <a href="/">Neel writes 🖊</a>
+    </h1>
+</header>
+
+<style lang="scss">
+    .header {
+        padding: 1em;
+        position: sticky;
+        top: 0;
+        margin-bottom: 20px;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    @supports (backdrop-filter: none) {
+        .header {
+            background-color: rgba(3, 46, 40, 0.7);
+            backdrop-filter: blur(7px);
+        }
+    }
+
+    @supports not (backdrop-filter: none) {
+        .header {
+            background-color: rgb(3, 46, 40);
+        }
+    }
+</style>

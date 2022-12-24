@@ -1,0 +1,37 @@
+---
+import '~/styles/global.scss';
+import '~/styles/blog.scss';
+
+import Header from '~/components/Header.astro';
+
+export interface Props {
+    content: {
+        title: string;
+        description: string;
+        pubDate?: string;
+        updatedDate?: string;
+        heroImage?: string;
+    };
+}
+
+const {
+    content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <Header />
+
+        <article>
+            <slot />
+        </article>
+    </body>
+</html>
