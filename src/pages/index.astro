@@ -1,12 +1,11 @@
 ---
 import Layout from '~/layouts/Layout.astro';
+import Card from '~/components/Card.astro';
+import type { Post } from '~/types/post';
+
+const posts = await Astro.glob<Post>('./blog/*.md');
 ---
 
-<Layout title="Neel writes">
-    <div style="height: 100vh">
-        <a href="/blog/markdown-style-guide">style</a>
-    </div>
-    <div style="height: 100vh">test</div>
-    <div style="height: 100vh">test</div>
-    <div style="height: 100vh">test</div>
+<Layout title="Neel writes 🖊">
+    {posts.map((post) => <Card {post} />)}
 </Layout>
