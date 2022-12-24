@@ -31,8 +31,9 @@ const {
         <Header />
 
         <article>
-            <h2>{title}</h2>
-            <p>Posted on <strong>{pubDate}</strong></p>
+            <h2 class="title">{title}</h2>
+
+            <p class="date">Posted on <strong>{pubDate}</strong></p>
             <hr />
             <slot />
         </article>
