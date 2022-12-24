@@ -30,6 +30,7 @@ const {
         <Header />
 
         <article>
+            <img class="heroImg" src={heroImage} alt={title} />
             <h2 class="title">{title}</h2>
 
             <p class="date">Posted on <strong>{pubDate}</strong></p>
@@ -38,3 +39,10 @@ const {
         </article>
     </body>
 </html>
+
+<style>
+    .heroImg {
+        width: 100%;
+        border-radius: 16px;
+    }
+</style>
