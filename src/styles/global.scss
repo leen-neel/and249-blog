@@ -33,6 +33,10 @@ body {
     color: white;
     font-family: poppins;
 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     main,
     article {
         padding: 0 10vw;

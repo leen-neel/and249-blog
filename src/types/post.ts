@@ -4,6 +4,8 @@ export type Post = {
         description: string;
         heroImage: string;
         pubDate: string;
+        tags: string[];
+        category: string;
     };
 
     url: string;

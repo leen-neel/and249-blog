@@ -2,6 +2,7 @@
 import '~/styles/global.scss';
 
 import Header from '~/components/Header.astro';
+import Footer from '~/components/Footer.astro';
 
 export interface Props {
     content: {
@@ -34,6 +35,8 @@ const {
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
     </head>
     <body>
@@ -59,6 +62,8 @@ const {
             <hr />
             <slot />
         </article>
+
+        <Footer />
     </body>
 </html>
 
