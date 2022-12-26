@@ -3,7 +3,7 @@ layout: '../../layouts/BlogLayout.astro'
 title: 'First post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: '7.12.2022'
-heroImage: '/placeholder-hero.jpg'
+heroImage: 'placeholder-hero.jpg'
 category: programming
 tags:
     - vue

@@ -3,7 +3,7 @@ layout: '../../layouts/BlogLayout.astro'
 title: 'Second post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: '7.13.22'
-heroImage: '/placeholder-hero.jpg'
+heroImage: 'placeholder-hero.jpg'
 category: programming
 ---
 
