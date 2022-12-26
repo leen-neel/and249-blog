@@ -1,7 +1,10 @@
 ---
 import '~/styles/global.scss';
+import BaseHead from './BaseHead.astro';
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
+
+import { SITE_TITLE, DESCRIPTION } from '~/config';
 
 export interface Props {
     title: string;
@@ -13,11 +16,7 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <BaseHead title={SITE_TITLE} description={DESCRIPTION} />
     </head>
     <body>
         <Header />
