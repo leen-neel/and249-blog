@@ -64,6 +64,10 @@ this is a note
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 
+| Heading 1 | Heading 2 | Heading 3 |
+| --------- | --------- | --------- |
+| test      | test      | test      |
+
 ## Code Blocks
 
 ```html
