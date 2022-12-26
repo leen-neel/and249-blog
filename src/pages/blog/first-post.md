@@ -4,7 +4,7 @@ title: 'First post'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: '7.12.2022'
 heroImage: '/placeholder-hero.jpg'
-category: Programming
+category: programming
 tags:
     - vue
     - programming

@@ -1,0 +1,36 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Card from '~/components/Card.astro';
+import type { Post } from '~/types/post';
+
+export async function getStaticPaths() {
+    const posts = await Astro.glob<Post>('../blog/*.{md,mdx}');
+
+    const categories = new Set<string>();
+    posts.map((post) => {
+        categories.add(post.frontmatter.category.toLowerCase());
+    });
+
+    return Array.from(categories).map((category) => {
+        const filteredPosts = posts.filter(
+            (post) => post.frontmatter.category.toLowerCase() === category
+        );
+
+        console.log(category);
+
+        return {
+            params: {
+                category: category,
+            },
+            props: {
+                posts: filteredPosts,
+            },
+        };
+    });
+}
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<html>{JSON.stringify(posts.length)}</html>
