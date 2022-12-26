@@ -10,11 +10,21 @@ export interface Props {
         pubDate?: string;
         updatedDate?: string;
         heroImage?: string;
+        category: string;
+        tags: string[];
     };
 }
 
 const {
-    content: { title, description, pubDate, updatedDate, heroImage },
+    content: {
+        title,
+        description,
+        pubDate,
+        updatedDate,
+        heroImage,
+        category,
+        tags,
+    },
 } = Astro.props;
 ---
 
@@ -28,12 +38,24 @@ const {
     </head>
     <body>
         <Header />
-
         <article>
             <img class="heroImg" src={heroImage} alt={title} />
             <h2 class="title">{title}</h2>
 
-            <p class="date">Posted on <strong>{pubDate}</strong></p>
+            <p class="date">
+                Posted on <strong>
+                    <time datetime={pubDate}>
+                        {
+                            new Date(pubDate).toLocaleDateString('en-us', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                            })
+                        }
+                    </time>
+                </strong>
+            </p>
+            <p>Category: <strong>{category}</strong></p>
             <hr />
             <slot />
         </article>

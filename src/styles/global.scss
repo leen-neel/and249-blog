@@ -24,7 +24,7 @@ $border: #1e877d;
 
 .grid {
     display: grid;
-    gap: 1.3rem;
+    gap: 0.8rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
@@ -53,7 +53,7 @@ body {
         }
 
         p {
-            margin: 5px 0;
+            margin: 15px 0;
             font-size: 1.1em;
         }
 

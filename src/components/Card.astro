@@ -20,7 +20,20 @@ const { post } = Astro.props;
         <a href={post.url}>
             <h3>{post.frontmatter.title}</h3>
         </a>
-        Posted on <strong>{post.frontmatter.pubDate}</strong>
+        Posted on <strong>
+            <time datetime={post.frontmatter.pubDate}>
+                {
+                    new Date(post.frontmatter.pubDate).toLocaleDateString(
+                        'en-us',
+                        {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                        }
+                    )
+                }
+            </time>
+        </strong>
         <hr />
         <p>
             {post.frontmatter.description}

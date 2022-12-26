@@ -3,11 +3,15 @@ import Layout from '~/layouts/Layout.astro';
 import Card from '~/components/Card.astro';
 import type { Post } from '~/types/post';
 
-const posts = await Astro.glob<Post>('./blog/*.md');
+const posts = (await Astro.glob<Post>('./blog/*.{md,mdx}')).sort(
+    (a, b) =>
+        new Date(b.frontmatter.pubDate).valueOf() -
+        new Date(a.frontmatter.pubDate).valueOf()
+);
 ---
 
 <Layout title="Neel writes 🖊">
     <div class="grid">
-        {posts.map((post) => <Card {post} />)}
+        {posts.map((post) => <Card post={post} />)}
     </div>
 </Layout>
