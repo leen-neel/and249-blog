@@ -7,5 +7,7 @@ const posts = await Astro.glob<Post>('./blog/*.md');
 ---
 
 <Layout title="Neel writes 🖊">
-    {posts.map((post) => <Card {post} />)}
+    <div class="grid">
+        {posts.map((post) => <Card {post} />)}
+    </div>
 </Layout>

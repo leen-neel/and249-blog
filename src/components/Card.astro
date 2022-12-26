@@ -7,7 +7,7 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<div>
+<div class="post-card">
     <figure>
         <img
             class="thumbnail"
@@ -16,7 +16,7 @@ const { post } = Astro.props;
         />
     </figure>
 
-    <div>
+    <div class="info">
         <a href={post.url}>
             <h3>{post.frontmatter.title}</h3>
         </a>
@@ -29,5 +29,28 @@ const { post } = Astro.props;
 <style lang="scss">
     .thumbnail {
         width: 100%;
+        // border-radius: 0 0 16px 16px;
+    }
+
+    .post-card {
+        background-color: #296e63;
+        border-radius: 16px !important;
+        transition: 500ms;
+
+        &:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+    }
+
+    .info {
+        padding: 10px;
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        p {
+            font-size: 1em;
+        }
     }
 </style>
