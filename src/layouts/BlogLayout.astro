@@ -61,16 +61,23 @@ const {
                     </time>
                 </strong>
             </p>
-            <p>Category: <strong>{category}</strong></p>
+            <p>
+                Category: <strong>
+                    <a href={`/category/${category.toLowerCase()}`}>
+                        {category}
+                    </a>
+                </strong>
+            </p>
             <hr />
             <slot />
         </article>
 
         <Footer />
-    </body><style>
-        .heroImg {
-            width: 100%;
-            border-radius: 16px;
-        }
-    </style>
+        <style>
+            .heroImg {
+                width: 100%;
+                border-radius: 16px;
+            }
+        </style>
+    </body>
 </html>
