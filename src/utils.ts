@@ -1,5 +1,7 @@
 export function getImageURL(image?: string): string {
+    console.log(image);
+
     return image
-        ? `http://images.and249.codes/${image}`
-        : 'http://images.and249.codes/placeholder-social.jpg';
+        ? `https://images.and249.codes/${image}`
+        : 'https://images.and249.codes/placeholder-social.jpg';
 }
