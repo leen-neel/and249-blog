@@ -3,7 +3,7 @@ layout: '../../layouts/BlogLayout.astro'
 title: 'My experience with Astro 🚀'
 description: 'After a lot of procrastination, I have finally gotten around in using Astro, and I do hate my past self for procrastinating this much.'
 pubDate: '12.28.2022'
-heroImage: 'placeholder-hero.jpg'
+heroImage: 'astro.jpg'
 category: 'Web dev'
 draft: false
 tags:
