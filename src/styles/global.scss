@@ -168,3 +168,14 @@ body {
         }
     }
 }
+
+@media (max-width: 480px) {
+    main,
+    article {
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 2em !important;
+    }
+}
