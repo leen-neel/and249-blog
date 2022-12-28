@@ -7,6 +7,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     integrations: [],
     markdown: {
+        drafts: true,
         shikiConfig: {
             theme: 'material-ocean',
         },

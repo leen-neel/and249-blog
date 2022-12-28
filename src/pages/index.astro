@@ -3,11 +3,13 @@ import Layout from '~/layouts/Layout.astro';
 import Card from '~/components/Card.astro';
 import type { Post } from '~/types/post';
 
-const posts = (await Astro.glob<Post>('./blog/*.{md,mdx}')).sort(
-    (a, b) =>
-        new Date(b.frontmatter.pubDate).valueOf() -
-        new Date(a.frontmatter.pubDate).valueOf()
-);
+const posts = (await Astro.glob<Post>('./blog/*.{md,mdx}'))
+    .filter((post) => !post.frontmatter.draft)
+    .sort(
+        (a, b) =>
+            new Date(b.frontmatter.pubDate).valueOf() -
+            new Date(a.frontmatter.pubDate).valueOf()
+    );
 ---
 
 <Layout title="Neel writes 🖊">
@@ -28,13 +30,6 @@ const posts = (await Astro.glob<Post>('./blog/*.{md,mdx}')).sort(
     <p>
         If you like my work and would like to support me, you could do so by
         donating to my <a href="https://ko-fi.com/and249">Ko-fi.</a>
-        <script
-            type="text/javascript"
-            src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
-        ></script><script type="text/javascript">
-            kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'H2H0CSLCA');
-            kofiwidget2.draw();
-        </script>
     </p>
 
     <h3>Recent posts:</h3>

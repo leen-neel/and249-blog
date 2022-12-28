@@ -6,6 +6,7 @@ export type Post = {
         pubDate: string;
         tags: string[];
         category: string;
+        draft: boolean;
     };
 
     url: string;
