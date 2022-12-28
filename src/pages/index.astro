@@ -11,7 +11,40 @@ const posts = (await Astro.glob<Post>('./blog/*.{md,mdx}')).sort(
 ---
 
 <Layout title="Neel writes 🖊">
+    <h2>Greetings! I'm <span class="archDau">Neel!</span></h2>
+    <p>
+        I'm a full-stack web developer. This is my blog where I share some
+        bits-and-pieces about myself, my life and random things that interest
+        me.
+    </p>
+
+    <p>
+        If you'd like to know about my work experience you could visit my <a
+            href="https://and249.codes"
+            >main site
+        </a>
+    </p>
+
+    <p>
+        If you like my work and would like to support me, you could do so by
+        donating to my <a href="https://ko-fi.com/and249">Ko-fi.</a>
+        <script
+            type="text/javascript"
+            src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"
+        ></script><script type="text/javascript">
+            kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'H2H0CSLCA');
+            kofiwidget2.draw();
+        </script>
+    </p>
+
+    <h3>Recent posts:</h3>
     <div class="grid">
         {posts.map((post) => <Card post={post} />)}
     </div>
 </Layout>
+
+<style>
+    .kofi-button {
+        display: inline !important;
+    }
+</style>
