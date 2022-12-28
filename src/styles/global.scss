@@ -1,7 +1,8 @@
+@use './variables';
 @import url(./fontConfig.scss);
 
-$primary: #26a69a;
-$border: #1e877d;
+// $primary: #26a69a;
+// $border: #1e877d;
 
 * {
     margin: 0;
@@ -24,7 +25,7 @@ $border: #1e877d;
 
 .grid {
     display: grid;
-    gap: 0.8rem;
+    gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
@@ -50,7 +51,7 @@ body {
 
         hr {
             height: 5px;
-            background-color: $primary;
+            background-color: variables.$primary;
             border: none;
             border-radius: 8px;
             margin: 10px 0;
@@ -120,7 +121,7 @@ body {
         }
 
         blockquote {
-            border: $border 2px solid;
+            border: variables.$border 2px solid;
             padding: 1em;
             margin: 5px 0;
             p {
@@ -129,7 +130,7 @@ body {
         }
 
         mark {
-            background-color: $primary;
+            background-color: variables.$primary;
             color: white;
         }
 
@@ -137,7 +138,7 @@ body {
         th,
         tbody,
         td {
-            border: $border 2px solid;
+            border: variables.$border 2px solid;
             border-collapse: collapse;
             padding: 10px;
             text-align: center;
@@ -151,7 +152,7 @@ body {
 
         code {
             padding: 2px 5px;
-            background-color: $primary;
+            background-color: variables.$primary;
             color: white;
             font-weight: bold;
         }
