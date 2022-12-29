@@ -45,17 +45,22 @@ const { post } = Astro.props;
 <style lang="scss">
     .thumbnail {
         width: 100%;
-        border-radius: 16px 16px 0 0;
+        border-radius: 10px;
+    }
+
+    figure {
+        padding: 10px;
+        transition: 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5%);
+        }
     }
 
     .post-card {
         background-color: #296e63;
         border-radius: 16px !important;
         transition: 500ms;
-
-        &:hover {
-            transform: translateY(-3px) scale(1.05);
-        }
     }
 
     .info {

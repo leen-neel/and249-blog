@@ -1,6 +1,7 @@
 @use './variables';
 @import url(./fontConfig.scss);
 
+// Some resets
 * {
     margin: 0;
     padding: 0;
@@ -169,6 +170,7 @@ body {
     }
 }
 
+// Media queries
 @media (max-width: 480px) {
     main,
     article {
