@@ -9,19 +9,21 @@ const { post } = Astro.props;
 ---
 
 <div class="post-card">
-    <figure>
-        <img
-            class="thumbnail"
-            src={getImageURL(post.frontmatter.heroImage)}
-            alt={post.frontmatter.title}
-        />
-    </figure>
+    <a href={post.url}>
+        <figure>
+            <img
+                class="thumbnail"
+                src={getImageURL(post.frontmatter.heroImage)}
+                alt={post.frontmatter.title}
+            />
+        </figure>
+    </a>
 
     <div class="info">
         <a href={post.url}>
             <h3>{post.frontmatter.title}</h3>
         </a>
-        Posted on <strong>
+        📅<strong>
             <time datetime={post.frontmatter.pubDate}>
                 {
                     new Date(post.frontmatter.pubDate).toLocaleDateString(
