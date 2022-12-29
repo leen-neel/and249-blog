@@ -1,0 +1,40 @@
+---
+import '~/styles/global.scss';
+import BaseHead from '~/components/BaseHead.astro';
+import { DESCRIPTION, SITE_TITLE } from '~/config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead
+            title={`Page not found | ${SITE_TITLE}`}
+            description={DESCRIPTION}
+        />
+
+        <style lang="scss">
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    margin-top: 10px;
+                }
+
+                a {
+                    color: white;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body class="center">
+        <h1>Error 404</h1>
+        <p>The page you're looking for doesn't exist *sad trombone*</p>
+        <a href="/">Go back</a>
+    </body>
+</html>
