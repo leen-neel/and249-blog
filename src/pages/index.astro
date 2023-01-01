@@ -37,9 +37,3 @@ const posts = (await Astro.glob<Post>('./blog/*.{md,mdx}'))
         {posts.map((post) => <Card post={post} />)}
     </div>
 </Layout>
-
-<style>
-    .kofi-button {
-        display: inline !important;
-    }
-</style>

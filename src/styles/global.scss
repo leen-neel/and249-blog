@@ -36,6 +36,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
 
+    a {
+        color: white;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
     main,
     article {
         padding: 1em 10vw;
@@ -153,14 +161,6 @@ body {
             background-color: variables.$primary;
             color: white;
             font-weight: bold;
-        }
-
-        a {
-            color: white;
-
-            &:hover {
-                text-decoration: none;
-            }
         }
 
         .astro-code {
