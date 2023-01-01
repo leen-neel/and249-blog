@@ -1,6 +1,14 @@
 ---
 import '~/styles/global.scss';
 import '~/styles/fontConfig.scss';
+
+import { getPosts } from '~/utils';
+
+let posts = getPosts();
+
+posts.map((post) => {
+    console.log(post.frontmatter.title);
+});
 ---
 
 <html>
