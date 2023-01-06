@@ -23,6 +23,10 @@
 
 <hr />
 
+![Neel Writes](https://images.and249.codes/default.png)
+
+<hr />
+
 ## Technical info
 
 This site has been built with [Astro](https://astro.build/) the static site generator.
