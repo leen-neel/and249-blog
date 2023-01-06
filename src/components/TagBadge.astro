@@ -1,0 +1,30 @@
+---
+export interface Props {
+    tag: string;
+}
+
+const { tag } = Astro.props;
+---
+
+<span class="badge">
+    <a href={`/tags/${tag}`}> {tag}</a>
+</span>
+
+<style lang="scss">
+    .badge {
+        padding: 3px 7px;
+        background-color: #26a69a;
+        color: white;
+        font-weight: bold;
+        margin: 0 5px;
+
+        display: inline-flex;
+        justify-content: center;
+
+        transition: 500ms;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+</style>
