@@ -1,50 +1,41 @@
-# Welcome to [Astro](https://astro.build)
+<div id="header" align="center">
+  <h1>
+    Greetings!
+    <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"/>
+  </h1>
+  
+  <h2> I'm Neel! This is my blog :D </h2>
+  
+  [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H0CSLCA)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
+  <div id="badges">
+    <a href="https://linkedin.com/in/and249">
+      <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+    </a>
+    <a href="https://www.instagram.com/and_249">
+      <img src="https://img.shields.io/badge/instagram-bc2a8d?style=for-the-badge&logo=instagram&logoColor=white" alt="Youtube Badge"/>
+    </a>
+    <a href="https://twitter.com/AnindoNeel">
+      <img src="https://img.shields.io/badge/Twitter-blue?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
+    </a>
+  </div>
+ </div>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<hr />
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Technical info
 
+This site has been built with [Astro](https://astro.build/) the static site generator.
 
-## 🚀 Project Structure
+To learn how Astro works head over to their [docs!](https://docs.astro.build/en/getting-started/)
 
-Inside of your Astro project, you'll see the following folders and files:
+## How to run
 
+To run this project locally:
+
+```sh
+git clone https://github.com/leen-neel/and249-blog
+cd and249-blog
+npm install
+npm run dev
 ```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
