@@ -1,6 +1,7 @@
 #!/bin/bash
 
 npm run build
-zip -r site.zip ./dist
+cd ./dist
+zip -r ../site.zip ./*
 
 figlet "Site built!"
