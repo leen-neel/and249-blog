@@ -4,8 +4,12 @@ import { defineConfig } from 'astro/config';
 // import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
+import sitemap from '@astrojs/sitemap';
+
+// https://astro.build/config
 export default defineConfig({
-    integrations: [],
+    site: 'https://blog.and249.codes/',
+    integrations: [sitemap()],
     markdown: {
         shikiConfig: {
             theme: 'material-ocean',
