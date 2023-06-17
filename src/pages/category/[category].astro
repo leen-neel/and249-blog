@@ -2,7 +2,6 @@
 import Layout from "~/layouts/Layout.astro";
 import Card from "~/components/Card.astro";
 
-// import type { Post } from "~/types/post";
 import { SITE_TITLE } from "~/config";
 
 import { CollectionEntry, getCollection } from "astro:content";
@@ -14,9 +13,8 @@ export async function getStaticPaths() {
     ...new Set(posts.map((post) => post.data.category.toLowerCase()).flat()),
   ];
 
-  // posts.forEach((post) => console.log(post.data.category.toLowerCase()));
-
   return Array.from(categories).map((filteredCategory) => {
+    // FIltering out the posts
     const filteredPosts = posts.filter(
       (post) => post.data.category.toLowerCase() === filteredCategory
     );
