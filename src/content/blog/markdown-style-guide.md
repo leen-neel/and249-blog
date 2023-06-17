@@ -1,15 +1,14 @@
 ---
-layout: '~/layouts/BlogLayout.astro'
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jul 01 2022'
-heroImage: 'placeholder-hero.jpg'
-category: 'Cars'
+title: "Markdown Style Guide"
+description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
+pubDate: "Jul 01 2022"
+heroImage: "placeholder-hero.jpg"
+category: "Cars"
 draft: true
 tags:
-    - web dev
-    - styles
-    - astro
+  - web dev
+  - styles
+  - astro
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -78,13 +77,13 @@ this is a note
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Example HTML5 Document</title>
-    </head>
-    <body>
-        <p>Test</p>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
 </html>
 ```
 
@@ -98,21 +97,21 @@ this is a note
 
 #### Unordered List
 
--   List item
--   Another item
--   And another item
+- List item
+- Another item
+- And another item
 
 #### Nested list
 
--   Fruit
+- Fruit
 
-    -   Apple
-    -   Orange
-    -   Banana
+  - Apple
+  - Orange
+  - Banana
 
--   Dairy
-    -   Milk
-    -   Cheese
+- Dairy
+  - Milk
+  - Cheese
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 

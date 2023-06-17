@@ -1,55 +1,53 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import Card from '~/components/Card.astro';
+import Layout from "~/layouts/Layout.astro";
+import Card from "~/components/Card.astro";
 
-import type { Post } from '~/types/post';
-import { getPosts } from '~/utils';
-import { SITE_TITLE } from '~/config';
+// import type { Post } from "~/types/post";
+import { SITE_TITLE } from "~/config";
+
+import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-    const posts = getPosts();
+  const posts = await getCollection("blog");
 
-    // Adding the categories in a set
-    const categories = new Set<string>();
-    posts.map((post) => {
-        categories.add(post.frontmatter.category.toLowerCase());
-    });
+  const categories = [
+    ...new Set(posts.map((post) => post.data.category.toLowerCase()).flat()),
+  ];
 
-    // Converting the set in an array and looping thru the elements
-    return Array.from(categories).map((category) => {
-        // Getting the posts depending on the category
-        const filteredPosts: Post[] = posts.filter(
-            (post) => post.frontmatter.category.toLowerCase() === category
-        );
+  // posts.forEach((post) => console.log(post.data.category.toLowerCase()));
 
-        return {
-            params: {
-                category: category,
-            },
-            props: {
-                posts: filteredPosts,
-                category: category,
-            },
-        };
-    });
+  return Array.from(categories).map((filteredCategory) => {
+    const filteredPosts = posts.filter(
+      (post) => post.data.category.toLowerCase() === filteredCategory
+    );
+
+    return {
+      params: {
+        category: filteredCategory,
+      },
+      props: {
+        posts: filteredPosts,
+      },
+    };
+  });
 }
 const { category } = Astro.params;
 const { posts } = Astro.props;
 
 function capitalize(word: any) {
-    return word[0].toUpperCase() + word.substring(1);
+  return word[0].toUpperCase() + word.substring(1);
 }
 const title = `${capitalize(category)} | ${SITE_TITLE}`;
 ---
 
 <Layout title={title}>
-    <body>
-        <h2 style="margin-bottom: 10px;">
-            Category: <strong>{capitalize(category)}</strong>
-        </h2>
+  <body>
+    <h2 style="margin-bottom: 10px;">
+      Category: <strong>{capitalize(category)}</strong>
+    </h2>
 
-        <div class="grid">
-            {posts.map((post: Post) => <Card post={post} />)}
-        </div>
-    </body>
+    <div class="grid">
+      {posts.map((post: CollectionEntry<"blog">) => <Card post={post} />)}
+    </div>
+  </body>
 </Layout>

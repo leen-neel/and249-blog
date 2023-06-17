@@ -1,15 +1,14 @@
 ---
-layout: '../../layouts/BlogLayout.astro'
-title: 'My experience with Astro 🚀'
-description: 'After a lot of procrastination, I have finally gotten around in using Astro, and I do hate my past self for procrastinating this much.'
-pubDate: '12.28.2022'
-heroImage: 'astro.jpg'
-category: 'Web dev'
+title: "My experience with Astro 🚀"
+description: "After a lot of procrastination, I have finally gotten around in using Astro, and I do hate my past self for procrastinating this much."
+pubDate: "12.28.2022"
+heroImage: "astro.jpg"
+category: "Web dev"
 draft: false
 tags:
-    - web dev
-    - programming
-    - astro
+  - web dev
+  - programming
+  - astro
 ---
 
 I first heard about [Astro](https://astro.build/) from [FireShip's video](https://www.youtube.com/watch?v=dsTXcSeAZq8) last year and didn't really pay any heed to it. In my defence I was relatively new to the field and didn't care about my websites being super fast. But hey, it's about time I started caring about it and boy did Astro exceed my expectations. In the past few months I've tinkered around with it and it's been an amazing experience.

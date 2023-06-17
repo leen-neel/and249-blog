@@ -1,35 +1,29 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import Card from '~/components/Card.astro';
+import Layout from "~/layouts/Layout.astro";
+import Card from "~/components/Card.astro";
 
-import type { Post } from '~/types/post';
-import { getPosts } from '~/utils';
-import { SITE_TITLE } from '~/config';
+import { SITE_TITLE } from "~/config";
+
+import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-    const posts: Post[] = getPosts();
+  const posts = await getCollection("blog");
 
-    const tags = new Set<string>();
-    posts.map((post) => {
-        post.frontmatter.tags.map((tag) => {
-            tags.add(tag);
-        });
+  const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
+
+  return Array.from(uniqueTags).map((tag) => {
+    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+
+    return uniqueTags.map((tag) => {
+      const filteredPosts = posts.filter((post) =>
+        post.data.tags.includes(tag)
+      );
+      return {
+        params: { tag },
+        props: { posts: filteredPosts },
+      };
     });
-
-    return Array.from(tags).map((tag) => {
-        const filteredPosts: Post[] = posts.filter((post) =>
-            post.frontmatter.tags.includes(tag)
-        );
-
-        return {
-            params: {
-                tag: tag,
-            },
-            props: {
-                posts: filteredPosts,
-            },
-        };
-    });
+  });
 }
 
 const { tag } = Astro.params;
@@ -37,13 +31,13 @@ const { posts } = Astro.props;
 ---
 
 <Layout title={`Tag: ${tag} | ${SITE_TITLE}`}>
-    <body>
-        <h2 style="margin-bottom: 10px;">
-            Tag: <strong>{tag}</strong>
-        </h2>
+  <body>
+    <h2 style="margin-bottom: 10px;">
+      Tag: <strong>{tag}</strong>
+    </h2>
 
-        <div class="grid">
-            {posts.map((post: Post) => <Card post={post} />)}
-        </div>
-    </body>
+    <div class="grid">
+      {posts.map((post: CollectionEntry<"blog">) => <Card post={post} />)}
+    </div>
+  </body>
 </Layout>

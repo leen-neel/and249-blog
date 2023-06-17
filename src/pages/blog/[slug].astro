@@ -1,0 +1,86 @@
+---
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
+import BaseHead from "~/components/BaseHead.astro";
+import TagBadge from "~/components/TagBadge.astro";
+
+import { getImageURL } from "~/utils";
+import { SITE_TITLE } from "~/config";
+
+import { getCollection, CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+
+  return blogEntries.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${post.data.title} | ${SITE_TITLE}`}
+      description={post.data.description}
+      image={post.data.heroImage}
+    />
+  </head>
+  <body>
+    <Header />
+    <article>
+      <img
+        class="heroImg"
+        src={getImageURL(post.data.heroImage)}
+        alt={post.data.title}
+      />
+      <h2 class="title">{post.data.title}</h2>
+
+      <p class="date">
+        📅 <strong>
+          <time datetime={post.data.pubDate}>
+            {
+              new Date(post.data.pubDate).toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
+          </time>
+        </strong>
+      </p>
+      <p>
+        Category: <strong>
+          <a href={`/category/${post.data.category.toLowerCase()}`}>
+            {post.data.category}
+          </a>
+        </strong>
+      </p>
+
+      <p>
+        Tags:
+        {post.data.tags.map((tag) => <TagBadge tag={tag} />)}
+      </p>
+      <hr />
+      <!-- <slot /> -->
+      <Content />
+    </article>
+
+    <Footer />
+    <style>
+      .heroImg {
+        width: 100%;
+        border-radius: 16px;
+      }
+    </style>
+  </body>
+</html>
