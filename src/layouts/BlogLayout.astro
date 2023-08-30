@@ -1,87 +1,87 @@
 ---
-import Header from '~/components/Header.astro';
-import Footer from '~/components/Footer.astro';
-import BaseHead from '~/components/BaseHead.astro';
-import TagBadge from '~/components/TagBadge.astro';
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
+import BaseHead from "~/components/BaseHead.astro";
+import TagBadge from "~/components/TagBadge.astro";
 
-import { getImageURL } from '~/utils';
-import { SITE_TITLE } from '~/config';
+import { getImageURL } from "~/utils";
+import { SITE_TITLE } from "~/config";
 
 export interface Props {
-    content: {
-        title: string;
-        description: string;
-        pubDate?: string;
-        updatedDate?: string;
-        heroImage?: string;
-        category: string;
-        tags: string[];
-    };
+  content: {
+    title: string;
+    description: string;
+    pubDate?: string;
+    updatedDate?: string;
+    heroImage?: string;
+    category: string;
+    tags: string[];
+  };
 }
 
 const {
-    content: {
-        title,
-        description,
-        pubDate,
-        updatedDate,
-        heroImage,
-        category,
-        tags,
-    },
+  content: {
+    title,
+    description,
+    pubDate,
+    updatedDate,
+    heroImage,
+    category,
+    tags,
+  },
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <BaseHead
-            title={`${title} | ${SITE_TITLE}`}
-            description={description}
-            image={heroImage}
-        />
-    </head>
-    <body>
-        <Header />
-        <article>
-            <img class="heroImg" src={getImageURL(heroImage)} alt={title} />
-            <h2 class="title">{title}</h2>
+  <head>
+    <BaseHead
+      title={`${title} | ${SITE_TITLE}`}
+      description={description}
+      image={heroImage}
+    />
+  </head>
+  <body>
+    <Header />
+    <article>
+      <img class="heroImg" src={getImageURL(heroImage)} alt={title} />
+      <h2 class="title">{title}</h2>
 
-            <p class="date">
-                📅 <strong>
-                    <time datetime={pubDate}>
-                        {
-                            new Date(pubDate).toLocaleDateString('en-us', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                            })
-                        }
-                    </time>
-                </strong>
-            </p>
-            <p>
-                Category: <strong>
-                    <a href={`/category/${category.toLowerCase()}`}>
-                        {category}
-                    </a>
-                </strong>
-            </p>
-
-            <p>
-                Tags:
-                {tags.map((tag) => <TagBadge tag={tag} />)}
-            </p>
-            <hr />
-            <slot />
-        </article>
-
-        <Footer />
-        <style>
-            .heroImg {
-                width: 100%;
-                border-radius: 16px;
+      <p class="date">
+        w 📅 <strong>
+          <time datetime={pubDate}>
+            {
+              new Date(pubDate).toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
             }
-        </style>
-    </body>
+          </time>
+        </strong>
+      </p>
+      <p>
+        Category: <strong>
+          <a href={`/category/${category.toLowerCase()}`}>
+            {category}
+          </a>
+        </strong>
+      </p>
+
+      <p>
+        Tags:
+        {tags.map((tag) => <TagBadge tag={tag} />)}
+      </p>
+      <hr />
+      <slot />
+    </article>
+
+    <Footer />
+    <style>
+      .heroImg {
+        width: 100%;
+        border-radius: 16px;
+      }
+    </style>
+  </body>
 </html>

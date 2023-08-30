@@ -12,6 +12,8 @@ posts = posts
     (a, b) =>
       new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
   );
+
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <Layout title="Neel Writes 🖊">

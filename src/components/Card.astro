@@ -17,15 +17,15 @@ const { post } = Astro.props;
         class="thumbnail"
         src={getImageURL(post.data.heroImage)}
         alt={post.data.title}
+        transition:name={post.slug}
       />
     </figure>
   </a>
-
   <div class="info">
     <a href={`/blog/${post.slug}`}>
       <h3>{post.data.title}</h3>
     </a>
-    📅<strong>
+     📅<strong>
       <time datetime={post.data.pubDate}>
         {
           new Date(post.data.pubDate).toLocaleDateString("en-us", {

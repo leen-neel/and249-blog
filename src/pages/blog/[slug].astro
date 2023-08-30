@@ -9,6 +9,8 @@ import { SITE_TITLE } from "~/config";
 
 import { getCollection, CollectionEntry } from "astro:content";
 
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
   post: CollectionEntry<"blog">;
 }
@@ -26,7 +28,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead
@@ -34,6 +36,7 @@ const { Content } = await post.render();
       description={post.data.description}
       image={post.data.heroImage}
     />
+    <!-- <ViewTransitions /> -->
   </head>
   <body>
     <Header />
@@ -42,6 +45,7 @@ const { Content } = await post.render();
         class="heroImg"
         src={getImageURL(post.data.heroImage)}
         alt={post.data.title}
+        transition:name={post.slug}
       />
       <h2 class="title">{post.data.title}</h2>
 
